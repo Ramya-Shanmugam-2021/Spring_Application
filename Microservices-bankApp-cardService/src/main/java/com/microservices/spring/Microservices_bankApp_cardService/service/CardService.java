@@ -41,7 +41,7 @@ public class CardService {
 //			 response = ResponseEntity
 //			            .status(HttpStatus.INTERNAL_SERVER_ERROR)
 //			            .body("An exception occured due to " + ex.getMessage());
-//		}
+
 		
 		return newCard;
 		
