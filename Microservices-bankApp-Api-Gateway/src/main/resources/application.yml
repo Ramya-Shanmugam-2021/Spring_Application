@@ -1,0 +1,27 @@
+
+server:
+  port: 8084
+
+spring:
+  application:
+    name: Microservices-bankApp-Api-Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: account-service
+          uri: lb://MICROSERVICES-BANKAPP-ACCOUNTSERVICE
+          predicates:
+            - Path=/account/**
+        - id: balance-service
+          uri: lb://MICROSERVICES-BANKAPP-BALANCESERVICE
+          predicates:
+            - Path=/balance/**
+        - id: card-service
+          uri: lb://MICROSERVICES-BANKAPP-CARDSERVICE
+          predicates:
+            - Path=/card/**
+    discovery:
+      locator:
+        enabled: true
+
+
